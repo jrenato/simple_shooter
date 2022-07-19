@@ -1,7 +1,6 @@
 /FI "C:\Epic\Games\UE_5.0\Engine\Intermediate\Build\Win64\UnrealEditor\Development\Analytics\Definitions.Analytics.h" 
 /FI "C:\Users\karva\Documents\Unreal Projects\SimpleShooter\Intermediate\Build\Win64\SimpleShooterEditor\Development\Core\SharedPCH.Core.ShadowErrors.h" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source" 
-/I "C:\Epic\Games\UE_5.0\Engine\Source\Runtime\Analytics\Analytics\Private" 
 /I "C:\Epic\Games\UE_5.0\Engine\Intermediate\Build\Win64\UnrealEditor\Inc\Analytics" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Runtime\Analytics" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Runtime\Analytics\Analytics\Public" 

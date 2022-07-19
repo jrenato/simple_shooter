@@ -1,7 +1,6 @@
 /FI "C:\Epic\Games\UE_5.0\Engine\Plugins\FX\Niagara\Intermediate\Build\Win64\UnrealEditor\Development\NiagaraAnimNotifies\Definitions.NiagaraAnimNotifies.h" 
 /FI "C:\Users\karva\Documents\Unreal Projects\SimpleShooter\Intermediate\Build\Win64\SimpleShooterEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source" 
-/I "C:\Epic\Games\UE_5.0\Engine\Plugins\FX\Niagara\Source\NiagaraAnimNotifies\Private" 
 /I "C:\Epic\Games\UE_5.0\Engine\Plugins\FX\Niagara\Intermediate\Build\Win64\UnrealEditor\Inc\NiagaraAnimNotifies" 
 /I "C:\Epic\Games\UE_5.0\Engine\Plugins\FX\Niagara\Source" 
 /I "C:\Epic\Games\UE_5.0\Engine\Plugins\FX\Niagara\Source\NiagaraAnimNotifies\Public" 

@@ -1,7 +1,6 @@
 /FI "C:\Epic\Games\UE_5.0\Engine\Intermediate\Build\Win64\UnrealEditor\Development\SubobjectEditor\Definitions.SubobjectEditor.h" 
 /FI "C:\Users\karva\Documents\Unreal Projects\SimpleShooter\Intermediate\Build\Win64\SimpleShooterEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source" 
-/I "C:\Epic\Games\UE_5.0\Engine\Source\Editor\SubobjectEditor\Private" 
 /I "C:\Epic\Games\UE_5.0\Engine\Intermediate\Build\Win64\UnrealEditor\Inc\BlueprintGraph" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Editor" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Editor\BlueprintGraph\Classes" 

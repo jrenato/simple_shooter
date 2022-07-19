@@ -1,7 +1,6 @@
 /FI "C:\Epic\Games\UE_5.0\Engine\Intermediate\Build\Win64\UnrealEditor\Development\DesktopWidgets\Definitions.DesktopWidgets.h" 
 /FI "C:\Users\karva\Documents\Unreal Projects\SimpleShooter\Intermediate\Build\Win64\SimpleShooterEditor\Development\Slate\SharedPCH.Slate.ShadowErrors.h" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source" 
-/I "C:\Epic\Games\UE_5.0\Engine\Source\Developer\DesktopWidgets\Private" 
 /I "C:\Epic\Games\UE_5.0\Engine\Intermediate\Build\Win64\UnrealEditor\Inc\DesktopPlatform" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Developer" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Developer\DesktopPlatform\Public" 

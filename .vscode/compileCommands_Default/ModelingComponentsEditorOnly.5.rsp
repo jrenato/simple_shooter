@@ -1,7 +1,6 @@
 /FI "C:\Epic\Games\UE_5.0\Engine\Plugins\Runtime\MeshModelingToolset\Intermediate\Build\Win64\UnrealEditor\Development\ModelingComponentsEditorOnly\Definitions.ModelingComponentsEditorOnly.h" 
 /FI "C:\Users\karva\Documents\Unreal Projects\SimpleShooter\Intermediate\Build\Win64\SimpleShooterEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source" 
-/I "C:\Epic\Games\UE_5.0\Engine\Plugins\Runtime\MeshModelingToolset\Source\ModelingComponentsEditorOnly\Private" 
 /I "C:\Epic\Games\UE_5.0\Engine\Intermediate\Build\Win64\UnrealEditor\Inc\BSPUtils" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Developer" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Developer\BSPUtils\Public" 

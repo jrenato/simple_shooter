@@ -1,7 +1,6 @@
 /FI "C:\Epic\Games\UE_5.0\Engine\Plugins\Experimental\Interchange\Runtime\Intermediate\Build\Win64\UnrealEditor\Development\InterchangeNodes\Definitions.InterchangeNodes.h" 
 /FI "C:\Users\karva\Documents\Unreal Projects\SimpleShooter\Intermediate\Build\Win64\SimpleShooterEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source" 
-/I "C:\Epic\Games\UE_5.0\Engine\Plugins\Experimental\Interchange\Runtime\Source\Nodes\Private" 
 /I "C:\Epic\Games\UE_5.0\Engine\Plugins\Experimental\Interchange\Runtime\Intermediate\Build\Win64\UnrealEditor\Inc\InterchangeNodes" 
 /I "C:\Epic\Games\UE_5.0\Engine\Plugins\Experimental\Interchange\Runtime\Source" 
 /I "C:\Epic\Games\UE_5.0\Engine\Plugins\Experimental\Interchange\Runtime\Source\Nodes\Public" 

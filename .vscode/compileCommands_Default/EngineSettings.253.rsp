@@ -1,7 +1,6 @@
 /FI "C:\Epic\Games\UE_5.0\Engine\Intermediate\Build\Win64\UnrealEditor\Development\EngineSettings\Definitions.EngineSettings.h" 
 /FI "C:\Users\karva\Documents\Unreal Projects\SimpleShooter\Intermediate\Build\Win64\SimpleShooterEditor\Development\CoreUObject\SharedPCH.CoreUObject.ShadowErrors.h" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source" 
-/I "C:\Epic\Games\UE_5.0\Engine\Source\Runtime\EngineSettings\Private" 
 /I "C:\Epic\Games\UE_5.0\Engine\Intermediate\Build\Win64\UnrealEditor\Inc\Core" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Runtime" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Runtime\TraceLog\Public" 

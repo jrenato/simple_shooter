@@ -1,7 +1,6 @@
 /FI "C:\Epic\Games\UE_5.0\Engine\Intermediate\Build\Win64\UnrealEditor\Development\ToolWidgets\Definitions.ToolWidgets.h" 
 /FI "C:\Users\karva\Documents\Unreal Projects\SimpleShooter\Intermediate\Build\Win64\SimpleShooterEditor\Development\Slate\SharedPCH.Slate.ShadowErrors.h" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source" 
-/I "C:\Epic\Games\UE_5.0\Engine\Source\Developer\ToolWidgets\Private" 
 /I "C:\Epic\Games\UE_5.0\Engine\Intermediate\Build\Win64\UnrealEditor\Inc\ToolWidgets" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Developer" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Developer\ToolWidgets\Public" 

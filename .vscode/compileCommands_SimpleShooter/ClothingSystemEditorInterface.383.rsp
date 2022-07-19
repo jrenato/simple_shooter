@@ -1,7 +1,6 @@
 /FI "C:\Epic\Games\UE_5.0\Engine\Intermediate\Build\Win64\UnrealEditor\Development\ClothingSystemEditorInterface\Definitions.ClothingSystemEditorInterface.h" 
 /FI "C:\Users\karva\Documents\Unreal Projects\SimpleShooter\Intermediate\Build\Win64\SimpleShooterEditor\Development\CoreUObject\SharedPCH.CoreUObject.ShadowErrors.h" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source" 
-/I "C:\Epic\Games\UE_5.0\Engine\Source\Editor\ClothingSystemEditorInterface\Private" 
 /I "C:\Epic\Games\UE_5.0\Engine\Intermediate\Build\Win64\UnrealEditor\Inc\ClothingSystemEditorInterface" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Editor" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Editor\ClothingSystemEditorInterface\Public" 

@@ -1,7 +1,6 @@
 /FI "C:\Epic\Games\UE_5.0\Engine\Plugins\Animation\ControlRigSpline\Intermediate\Build\Win64\UnrealEditor\Development\ControlRigSpline\Definitions.ControlRigSpline.h" 
 /FI "C:\Users\karva\Documents\Unreal Projects\SimpleShooter\Intermediate\Build\Win64\SimpleShooterEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.NoUndef.h" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source" 
-/I "C:\Epic\Games\UE_5.0\Engine\Plugins\Animation\ControlRigSpline\Source\ControlRigSpline\Private" 
 /I "C:\Epic\Games\UE_5.0\Engine\Plugins\Animation\ControlRigSpline\Intermediate\Build\Win64\UnrealEditor\Inc\ControlRigSpline" 
 /I "C:\Epic\Games\UE_5.0\Engine\Plugins\Animation\ControlRigSpline\Source" 
 /I "C:\Epic\Games\UE_5.0\Engine\Plugins\Animation\ControlRigSpline\Source\ControlRigSpline\Public" 

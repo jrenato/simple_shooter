@@ -1,7 +1,6 @@
 /FI "C:\Epic\Games\UE_5.0\Engine\Plugins\Editor\ContentBrowser\ContentBrowserFileDataSource\Intermediate\Build\Win64\UnrealEditor\Development\CBFileDataSource\Definitions.ContentBrowserFileDataSource.h" 
 /FI "C:\Users\karva\Documents\Unreal Projects\SimpleShooter\Intermediate\Build\Win64\SimpleShooterEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source" 
-/I "C:\Epic\Games\UE_5.0\Engine\Plugins\Editor\ContentBrowser\ContentBrowserFileDataSource\Source\ContentBrowserFileDataSource\Private" 
 /I "C:\Epic\Games\UE_5.0\Engine\Intermediate\Build\Win64\UnrealEditor\Inc\EditorFramework" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Editor" 
 /I "C:\Epic\Games\UE_5.0\Engine\Source\Editor\EditorFramework\Public" 
