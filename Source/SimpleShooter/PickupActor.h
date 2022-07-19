@@ -25,9 +25,23 @@ public:
 
 private:
 	UPROPERTY(VisibleAnywhere)
-	USceneComponent* Root;
+	class UBoxComponent* BoxCollider;
 
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* Mesh;
 
+	UFUNCTION()
+	void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UPROPERTY(EditAnywhere, Category = "Pickup")
+	USoundBase* PickupSound;
+
+	UPROPERTY(EditAnywhere, Category = "Pickup")
+	float RotateSpeed = 50.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Pickup")
+	int AmmoAmount = 0;
+
+	UPROPERTY(EditAnywhere, Category = "Pickup")
+	int HealthAmount = 0;
 };

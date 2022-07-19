@@ -39,6 +39,12 @@ public:
 	UFUNCTION(BlueprintPure)
 	int GetCurrentAmmo() const;
 
+	UFUNCTION()
+	void AddAmmo(int Amount);
+
+	UFUNCTION()
+	void AddHealth(float Amount);
+
 	void Shoot();
 
 private:

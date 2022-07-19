@@ -24,6 +24,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	int GetCurrentAmmo() const { return CurrentAmmo; }
+	void AddAmmo(int Amount);
 
 	void PullTrigger();
 

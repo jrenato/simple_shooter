@@ -120,3 +120,16 @@ int AShooterCharacter::GetCurrentAmmo() const
 	}
 	return 0;
 }
+
+void AShooterCharacter::AddAmmo(int Amount)
+{
+	if (Gun)
+	{
+		Gun->AddAmmo(Amount);
+	}
+}
+
+void AShooterCharacter::AddHealth(float Amount)
+{
+	Health = FMath::Min(Health + Amount, MaxHealth);
+}

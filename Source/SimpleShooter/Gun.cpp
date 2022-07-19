@@ -33,6 +33,11 @@ void AGun::Tick(float DeltaTime)
 
 }
 
+void AGun::AddAmmo(int Amount)
+{
+	CurrentAmmo = FMath::Min(CurrentAmmo + Amount, MaxAmmo);
+}
+
 void AGun::PullTrigger()
 {
 	APawn *OwnerPawn = Cast<APawn>(GetOwner());
