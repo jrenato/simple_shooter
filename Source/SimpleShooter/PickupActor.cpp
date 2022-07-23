@@ -49,13 +49,17 @@ void APickupActor::OnOverlapBeginCapture(class UPrimitiveComponent* OverlappedCo
 {
 	if (AShooterCharacter* Player = Cast<AShooterCharacter>(OtherActor))
 	{
-		if (AmmoAmount > 0)
+		if (Player->IsPlayerControlled())
 		{
-			Player->AddAmmo(AmmoAmount);
-		}
-		else if (HealthAmount > 0)
-		{
-			Player->AddHealth(HealthAmount);
+			UE_LOG(LogTemp, Warning, TEXT("Player picked up pickup"));
+			if (AmmoAmount > 0)
+			{
+				Player->AddAmmo(AmmoAmount);
+			}
+			else if (HealthAmount > 0)
+			{
+				Player->AddHealth(HealthAmount);
+			}
 		}
 	}
 

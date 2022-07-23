@@ -26,12 +26,14 @@ void UPickupSpawner::BeginPlay()
 
 void UPickupSpawner::SpawnPickup()
 {
-	if (PickupActorClass)
+	if (PickupActorClass != nullptr)
 	{
 		UWorld* const World = GetWorld();
 		if (World)
 		{
-			APickupActor* Pickup = World->SpawnActor<APickupActor>(PickupActorClass, GetComponentTransform());
+			UE_LOG(LogTemp, Warning, TEXT("Spawning pickup"));
+			FActorSpawnParameters SpawnParams;
+			APickupActor* const Pickup = World->SpawnActor<APickupActor>(PickupActorClass, GetComponentLocation(), GetComponentRotation(), SpawnParams);
 		}
 	}
 }
