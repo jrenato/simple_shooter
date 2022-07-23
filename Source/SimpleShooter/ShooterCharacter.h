@@ -53,6 +53,9 @@ private:
 	void LookUpRate(float AxisValue);
 	void LookRightRate(float AxisValue);
 
+	UPROPERTY(VisibleAnywhere)
+	class UPickupSpawner* PickupSpawner;
+
 	UPROPERTY(EditAnywhere)
 	float RotationRate = 70.0f;
 

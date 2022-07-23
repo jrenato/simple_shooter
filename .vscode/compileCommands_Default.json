@@ -70,6 +70,16 @@
 		"directory": "C:\\Epic\\Games\\UE_5.0\\Engine\\Source"
 	},
 	{
+		"file": "C:\\Users\\karva\\Documents\\Unreal Projects\\SimpleShooter\\Source\\SimpleShooter\\PickupSpawner.cpp",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\karva\\Documents\\Unreal Projects\\SimpleShooter\\.vscode\\compileCommands_Default\\SimpleShooter.211.rsp\"",
+		"directory": "C:\\Epic\\Games\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\karva\\Documents\\Unreal Projects\\SimpleShooter\\Source\\SimpleShooter\\PickupSpawner.h",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\karva\\Documents\\Unreal Projects\\SimpleShooter\\.vscode\\compileCommands_Default\\SimpleShooter.211.rsp\"",
+		"directory": "C:\\Epic\\Games\\UE_5.0\\Engine\\Source"
+	},
+	{
 		"file": "C:\\Users\\karva\\Documents\\Unreal Projects\\SimpleShooter\\Source\\SimpleShooter\\ShooterAIController.cpp",
 		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\karva\\Documents\\Unreal Projects\\SimpleShooter\\.vscode\\compileCommands_Default\\SimpleShooter.211.rsp\"",
 		"directory": "C:\\Epic\\Games\\UE_5.0\\Engine\\Source"

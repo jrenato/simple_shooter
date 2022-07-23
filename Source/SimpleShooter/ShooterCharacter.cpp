@@ -4,6 +4,7 @@
 #include "Gun.h"
 #include "Components/CapsuleComponent.h"
 #include "SimpleShooterGameModeBase.h"
+#include "PickupSpawner.h"
 
 // Sets default values
 AShooterCharacter::AShooterCharacter()
@@ -11,6 +12,8 @@ AShooterCharacter::AShooterCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	PickupSpawner = CreateDefaultSubobject<UPickupSpawner>(TEXT("PickupSpawner"));
+	PickupSpawner->SetupAttachment(RootComponent);
 }
 
 // Called when the game starts or when spawned
@@ -90,6 +93,8 @@ float AShooterCharacter::TakeDamage(float DamageAmount, struct FDamageEvent cons
 
 	if (IsDead())
 	{
+		PickupSpawner->SpawnPickup();
+
 		ASimpleShooterGameModeBase* GameMode = GetWorld()->GetAuthGameMode<ASimpleShooterGameModeBase>();
 		if (GameMode != nullptr)
 		{
