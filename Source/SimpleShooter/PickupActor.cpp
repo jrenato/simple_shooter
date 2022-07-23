@@ -3,6 +3,7 @@
 
 #include "PickupActor.h"
 #include "Components/BoxComponent.h"
+#include "Components/SphereComponent.h" 
 #include "Kismet/GameplayStatics.h"
 #include "ShooterCharacter.h"
 
@@ -12,11 +13,14 @@ APickupActor::APickupActor()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 
-	BoxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxCollider"));
-	RootComponent = BoxCollider;
+	CaptureCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("CaptureCollider"));
+	RootComponent = CaptureCollider;
 
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	Mesh->SetupAttachment(RootComponent);
+
+	DetectionCollider = CreateDefaultSubobject<USphereComponent>(TEXT("DetectCollider"));
+	DetectionCollider->SetupAttachment(RootComponent);
 }
 
 // Called when the game starts or when spawned
@@ -24,7 +28,10 @@ void APickupActor::BeginPlay()
 {
 	Super::BeginPlay();
 
-	BoxCollider->OnComponentBeginOverlap.AddDynamic(this, &APickupActor::OnOverlapBegin);
+	CaptureCollider->OnComponentBeginOverlap.AddDynamic(this, &APickupActor::OnOverlapBeginCapture);
+
+	DetectionCollider->OnComponentBeginOverlap.AddDynamic(this, &APickupActor::OnOverlapBeginDetection);
+	DetectionCollider->OnComponentEndOverlap.AddDynamic(this, &APickupActor::OnOverlapEndDetection);
 }
 
 // Called every frame
@@ -38,7 +45,7 @@ void APickupActor::Tick(float DeltaTime)
 
 }
 
-void APickupActor::OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+void APickupActor::OnOverlapBeginCapture(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	if (AShooterCharacter* Player = Cast<AShooterCharacter>(OtherActor))
 	{
@@ -54,4 +61,14 @@ void APickupActor::OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, cla
 
 	UGameplayStatics::PlaySoundAtLocation(this, PickupSound, GetActorLocation());
 	Destroy();
+}
+
+void APickupActor::OnOverlapBeginDetection(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	Mesh->SetRenderCustomDepth(true);
+}
+
+void APickupActor::OnOverlapEndDetection(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	Mesh->SetRenderCustomDepth(false);
 }
