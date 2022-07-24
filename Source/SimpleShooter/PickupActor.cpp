@@ -10,7 +10,7 @@
 APickupActor::APickupActor()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bCanEverTick = true;
 
 	BoxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("CaptureCollider"));
 	RootComponent = BoxCollider;
@@ -36,10 +36,16 @@ void APickupActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	// FRotator NewRotation = Mesh->GetComponentRotation();
-	// NewRotation.Yaw += RotateSpeed * DeltaTime;
-	// Mesh->SetWorldRotation(NewRotation);
-
+	if (RotatePickup)
+	{
+		// FRotator NewRotation = Mesh->GetComponentRotation();
+		// NewRotation.Yaw += RotateSpeed * DeltaTime;
+		// Mesh->SetWorldRotation(NewRotation);
+		
+		FRotator NewRotation = GetActorRotation();
+		NewRotation.Yaw += RotateSpeed * DeltaTime;
+		SetActorRotation(NewRotation);
+	}
 }
 
 bool APickupActor::IsCaptureComponent(UPrimitiveComponent* OverlappedComponent) const

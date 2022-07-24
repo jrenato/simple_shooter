@@ -47,7 +47,7 @@ private:
 	void OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 
 	UPROPERTY(EditAnywhere, Category = "Pickup")
-	USoundBase* PickupSound;
+	bool RotatePickup = false;
 
 	UPROPERTY(EditAnywhere, Category = "Pickup")
 	float RotateSpeed = 50.0f;
@@ -57,4 +57,10 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Pickup")
 	int HealthAmount = 0;
+
+	UPROPERTY(EditAnywhere, Category = "Pickup")
+	int PointAmount = 0;
+
+	UPROPERTY(EditAnywhere, Category = "Pickup")
+	USoundBase* PickupSound;
 };
