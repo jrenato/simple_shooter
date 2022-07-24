@@ -29,6 +29,14 @@ void APickupActor::BeginPlay()
 
 	SphereCollider->OnComponentBeginOverlap.AddDynamic(this, &APickupActor::OnOverlapBegin);
 	SphereCollider->OnComponentEndOverlap.AddDynamic(this, &APickupActor::OnOverlapEnd);
+
+	if (RotatePickup)
+	{
+		// Add random yawn rotation
+		FRotator NewRotation = GetActorRotation();
+		NewRotation.Yaw += FMath::FRandRange(0.0f, 90.0f);
+		SetActorRotation(NewRotation);
+	}
 }
 
 // Called every frame
