@@ -93,15 +93,19 @@ float AShooterCharacter::TakeDamage(float DamageAmount, struct FDamageEvent cons
 
 	if (IsDead())
 	{
+		if (GetCapsuleComponent()->GetCollisionEnabled() != ECollisionEnabled::NoCollision)
+		{
+			PickupSpawner->SpawnPickup();
+		}
+
 		ASimpleShooterGameModeBase* GameMode = GetWorld()->GetAuthGameMode<ASimpleShooterGameModeBase>();
 		if (GameMode != nullptr)
 		{
 			GameMode->PawnKilled(this);
 		}
+
 		DetachFromControllerPendingDestroy();
 		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-
-		PickupSpawner->SpawnPickup();
 	}
 
 	return DamageToApply;

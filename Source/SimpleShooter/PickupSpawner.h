@@ -27,7 +27,6 @@ public:
 	void SpawnPickup();
 
 private:
-	// PickupActor
 	UPROPERTY(EditDefaultsOnly, Category = "Pickup")
 	TSubclassOf<class APickupActor> PickupActorClass;
 

@@ -31,9 +31,8 @@ void UPickupSpawner::SpawnPickup()
 		UWorld* const World = GetWorld();
 		if (World)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Spawning pickup"));
-			FActorSpawnParameters SpawnParams;
-			APickupActor* const Pickup = World->SpawnActor<APickupActor>(PickupActorClass, GetComponentLocation(), GetComponentRotation(), SpawnParams);
+			FTransform SpawnTransform = GetComponentTransform();
+			APickupActor* const Pickup = World->SpawnActor<APickupActor>(PickupActorClass->GetDefaultObject()->GetClass(), SpawnTransform);
 		}
 	}
 }

@@ -51,7 +51,6 @@ void APickupActor::OnOverlapBeginCapture(class UPrimitiveComponent* OverlappedCo
 	{
 		if (Player->IsPlayerControlled())
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Player picked up pickup"));
 			if (AmmoAmount > 0)
 			{
 				Player->AddAmmo(AmmoAmount);
@@ -60,11 +59,11 @@ void APickupActor::OnOverlapBeginCapture(class UPrimitiveComponent* OverlappedCo
 			{
 				Player->AddHealth(HealthAmount);
 			}
+
+			UGameplayStatics::PlaySoundAtLocation(this, PickupSound, GetActorLocation());
+			Destroy();
 		}
 	}
-
-	UGameplayStatics::PlaySoundAtLocation(this, PickupSound, GetActorLocation());
-	Destroy();
 }
 
 void APickupActor::OnOverlapBeginDetection(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
