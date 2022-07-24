@@ -4,7 +4,9 @@
 #include "Gun.h"
 #include "Components/CapsuleComponent.h"
 #include "SimpleShooterGameModeBase.h"
+#include "Kismet/GameplayStatics.h"
 #include "PickupSpawner.h"
+#include "PickupActor.h"
 
 // Sets default values
 AShooterCharacter::AShooterCharacter()
@@ -20,6 +22,11 @@ AShooterCharacter::AShooterCharacter()
 void AShooterCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	CollisionCylinder = Cast<UCapsuleComponent>(GetCapsuleComponent());
+	if (this->IsPlayerControlled()){
+		CollisionCylinder->OnComponentBeginOverlap.AddDynamic(this, &AShooterCharacter::OnOverlapBegin);
+	}
 
 	Health = MaxHealth;
 
@@ -75,6 +82,25 @@ void AShooterCharacter::LookUpRate(float AxisValue)
 void AShooterCharacter::LookRightRate(float AxisValue)
 {
 	AddControllerYawInput(AxisValue * RotationRate * GetWorld()->GetDeltaSeconds());
+}
+
+void AShooterCharacter::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if (OtherActor->IsA(APickupActor::StaticClass()))
+	{
+		APickupActor* Pickup = Cast<APickupActor>(OtherActor);
+
+		if (!Pickup->IsCaptureComponent(OtherComp))
+		{
+			return;
+		}
+
+		this->AddHealth(Pickup->GetHealth());
+		this->AddAmmo(Pickup->GetAmmo());
+
+		UGameplayStatics::PlaySoundAtLocation(this, Pickup->GetPickupSound(), GetActorLocation());
+		Pickup->Destroy();
+	}
 }
 
 void AShooterCharacter::Shoot()

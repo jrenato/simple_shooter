@@ -39,12 +39,6 @@ public:
 	UFUNCTION(BlueprintPure)
 	int GetCurrentAmmo() const;
 
-	UFUNCTION()
-	void AddAmmo(int Amount);
-
-	UFUNCTION()
-	void AddHealth(float Amount);
-
 	void Shoot();
 
 private:
@@ -52,6 +46,9 @@ private:
 	void MoveRight(float AxisValue);
 	void LookUpRate(float AxisValue);
 	void LookRightRate(float AxisValue);
+
+	UPROPERTY(VisibleAnywhere)
+	class UCapsuleComponent* CollisionCylinder;
 
 	UPROPERTY(VisibleAnywhere)
 	class UPickupSpawner* PickupSpawner;
@@ -70,4 +67,13 @@ private:
 
 	UPROPERTY()
 	AGun* Gun;
+
+	UFUNCTION()
+	void AddAmmo(int Amount);
+
+	UFUNCTION()
+	void AddHealth(float Amount);
+
+	UFUNCTION()
+	void OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 };

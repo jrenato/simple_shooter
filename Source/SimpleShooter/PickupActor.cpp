@@ -4,7 +4,6 @@
 #include "PickupActor.h"
 #include "Components/BoxComponent.h"
 #include "Components/SphereComponent.h" 
-#include "Kismet/GameplayStatics.h"
 #include "ShooterCharacter.h"
 
 // Sets default values
@@ -13,14 +12,14 @@ APickupActor::APickupActor()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 
-	CaptureCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("CaptureCollider"));
-	RootComponent = CaptureCollider;
+	BoxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("CaptureCollider"));
+	RootComponent = BoxCollider;
 
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	Mesh->SetupAttachment(RootComponent);
 
-	DetectionCollider = CreateDefaultSubobject<USphereComponent>(TEXT("DetectCollider"));
-	DetectionCollider->SetupAttachment(RootComponent);
+	SphereCollider = CreateDefaultSubobject<USphereComponent>(TEXT("DetectCollider"));
+	SphereCollider->SetupAttachment(RootComponent);
 }
 
 // Called when the game starts or when spawned
@@ -28,10 +27,8 @@ void APickupActor::BeginPlay()
 {
 	Super::BeginPlay();
 
-	CaptureCollider->OnComponentBeginOverlap.AddDynamic(this, &APickupActor::OnOverlapBeginCapture);
-
-	DetectionCollider->OnComponentBeginOverlap.AddDynamic(this, &APickupActor::OnOverlapBeginDetection);
-	DetectionCollider->OnComponentEndOverlap.AddDynamic(this, &APickupActor::OnOverlapEndDetection);
+	SphereCollider->OnComponentBeginOverlap.AddDynamic(this, &APickupActor::OnOverlapBegin);
+	SphereCollider->OnComponentEndOverlap.AddDynamic(this, &APickupActor::OnOverlapEnd);
 }
 
 // Called every frame
@@ -45,33 +42,19 @@ void APickupActor::Tick(float DeltaTime)
 
 }
 
-void APickupActor::OnOverlapBeginCapture(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+bool APickupActor::IsCaptureComponent(UPrimitiveComponent* OverlappedComponent) const
 {
-	if (AShooterCharacter* Player = Cast<AShooterCharacter>(OtherActor))
-	{
-		if (Player->IsPlayerControlled())
-		{
-			if (AmmoAmount > 0)
-			{
-				Player->AddAmmo(AmmoAmount);
-			}
-			else if (HealthAmount > 0)
-			{
-				Player->AddHealth(HealthAmount);
-			}
-
-			UGameplayStatics::PlaySoundAtLocation(this, PickupSound, GetActorLocation());
-			Destroy();
-		}
-	}
+	return OverlappedComponent->GetName() == BoxCollider->GetName();
 }
 
-void APickupActor::OnOverlapBeginDetection(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+void APickupActor::OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	// Enable highlight on the pickup
 	Mesh->SetRenderCustomDepth(true);
 }
 
-void APickupActor::OnOverlapEndDetection(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+void APickupActor::OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
+	// Disable highlight on the pickup
 	Mesh->SetRenderCustomDepth(false);
 }

@@ -23,24 +23,28 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	int GetAmmo() const { return AmmoAmount; }
+	int GetHealth() const { return HealthAmount; }
+
+	USoundBase* GetPickupSound() const { return PickupSound; }
+
+	bool IsCaptureComponent(UPrimitiveComponent* OverlappedComponent) const;
+
 private:
 	UPROPERTY(VisibleAnywhere)
-	class UBoxComponent* CaptureCollider;
+	class UBoxComponent* BoxCollider;
 
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* Mesh;
 
 	UPROPERTY(VisibleAnywhere)
-	class USphereComponent* DetectionCollider;
+	class USphereComponent* SphereCollider;
 
 	UFUNCTION()
-	void OnOverlapBeginCapture(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 	UFUNCTION()
-	void OnOverlapBeginDetection(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-
-	UFUNCTION()
-	void OnOverlapEndDetection(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+	void OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 
 	UPROPERTY(EditAnywhere, Category = "Pickup")
 	USoundBase* PickupSound;
