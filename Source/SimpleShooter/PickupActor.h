@@ -25,6 +25,7 @@ public:
 
 	int GetAmmo() const { return AmmoAmount; }
 	int GetHealth() const { return HealthAmount; }
+	int GetPoints() const { return PointsAmount; }
 
 	USoundBase* GetPickupSound() const { return PickupSound; }
 
@@ -59,7 +60,7 @@ private:
 	int HealthAmount = 0;
 
 	UPROPERTY(EditAnywhere, Category = "Pickup")
-	int PointAmount = 0;
+	int PointsAmount = 0;
 
 	UPROPERTY(EditAnywhere, Category = "Pickup")
 	USoundBase* PickupSound;

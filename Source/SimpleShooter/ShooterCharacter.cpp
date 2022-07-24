@@ -29,6 +29,7 @@ void AShooterCharacter::BeginPlay()
 	}
 
 	Health = MaxHealth;
+	Points = 0;
 
 	if (GunClass)
 	{
@@ -97,6 +98,7 @@ void AShooterCharacter::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent,
 
 		this->AddHealth(Pickup->GetHealth());
 		this->AddAmmo(Pickup->GetAmmo());
+		this->AddPoints(Pickup->GetPoints());
 
 		UGameplayStatics::PlaySoundAtLocation(this, Pickup->GetPickupSound(), GetActorLocation());
 		Pickup->Destroy();
@@ -156,6 +158,11 @@ int AShooterCharacter::GetCurrentAmmo() const
 	return 0;
 }
 
+int AShooterCharacter::GetCurrentPoints() const
+{
+	return Points;
+}
+
 void AShooterCharacter::AddAmmo(int Amount)
 {
 	if (Gun)
@@ -167,4 +174,9 @@ void AShooterCharacter::AddAmmo(int Amount)
 void AShooterCharacter::AddHealth(float Amount)
 {
 	Health = FMath::Min(Health + Amount, MaxHealth);
+}
+
+void AShooterCharacter::AddPoints(int Amount)
+{
+	Points += Amount;	
 }
